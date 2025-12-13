@@ -189,6 +189,39 @@ Each leaderboard period (`week`, `month`, `year`) is stored as one small Redis k
 - (Recommended) **Upstash Redis** database
 
 ---
+## 🚀 Upstash Redis Setup Guide
+
+### 🔧 1. Create an Upstash Account  
+- Go to [https://upstash.com](https://upstash.com)  
+- Sign up using **GitHub** or **Google** (free tier works fine).  
+- Once logged in, click **“Create Database”**.
+
+---
+
+### 🧱 2. Create Your Redis Database  
+- Select **Redis** (not QStash / Kafka).  
+- Choose a **Region** (close to your users).  
+- Name it something like `circuitverse-leaderboard`.  
+- Click **Create**.  
+
+After provisioning, click the DB name — you’ll see:
+
+```text
+REST API URL: https://your-db-name.upstash.io
+REST API Token: ATWYAAIxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+---
+
+### 🔐 3. Copy Credentials  
+You’ll use **two values** from Upstash in your `.env` file:
+
+| Variable | Value from Dashboard |
+|-----------|----------------------|
+| `UPSTASH_REDIS_REST_URL` | REST API URL |
+| `UPSTASH_REDIS_REST_TOKEN` | REST API Token |
+
+---
 
 ## 🔐 Environment Variables
 Create `.env.local` in project root:
