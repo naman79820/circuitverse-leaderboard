@@ -1,6 +1,4 @@
 "use client";
-
-import { LeaderboardEntry } from "@/lib/db";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -15,9 +13,33 @@ import { Medal, Trophy, Filter, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import ActivityTrendChart from "./ActivityTrendChart";
+import ActivityTrendChart from "../../components/Leaderboard/ActivityTrendChart";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+
+export type LeaderboardEntry = {
+  username: string;
+  name: string | null;
+  avatar_url: string | null;
+  role?: string | null;
+
+  total_points: number;
+
+  activity_breakdown: Record<
+    string,
+    {
+      count: number;
+      points: number;
+    }
+  >;
+
+  daily_activity?: Array<{
+    date: string;   // ISO string
+    points: number;
+    count: number;
+  }>;
+};
+
 
 interface LeaderboardViewProps {
   entries: LeaderboardEntry[];

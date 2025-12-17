@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import ActivityTrendChart from "../leaderboard/ActivityTrendChart";
+import ActivityTrendChart from "../../components/Leaderboard/ActivityTrendChart";
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
