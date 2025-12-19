@@ -19,7 +19,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: Install
+        run: npm install
 
       - name: Generate leaderboard JSON
         env:
