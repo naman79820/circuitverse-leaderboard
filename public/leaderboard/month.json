@@ -1,8 +1,8 @@
 {
   "period": "month",
-  "updatedAt": 1766068594269,
-  "startDate": "2025-11-18",
-  "endDate": "2025-12-18",
+  "updatedAt": 1766142443505,
+  "startDate": "2025-11-19",
+  "endDate": "2025-12-19",
   "hiddenRoles": [],
   "entries": [
     {
@@ -10,15 +10,15 @@
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4",
       "role": "Contributor",
-      "total_points": 48,
+      "total_points": 41,
       "activity_breakdown": {
         "PR opened": {
-          "count": 13,
-          "points": 26
+          "count": 12,
+          "points": 24
         },
         "PR merged": {
-          "count": 3,
-          "points": 15
+          "count": 2,
+          "points": 10
         },
         "Issue opened": {
           "count": 7,
@@ -87,22 +87,12 @@
           "points": 2
         },
         {
-          "date": "2025-11-19",
-          "count": 1,
-          "points": 2
-        },
-        {
           "date": "2025-12-12",
           "count": 1,
           "points": 5
         },
         {
           "date": "2025-12-03",
-          "count": 1,
-          "points": 5
-        },
-        {
-          "date": "2025-11-19",
           "count": 1,
           "points": 5
         },
@@ -251,15 +241,15 @@
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/177391853?v=4",
       "role": "Contributor",
-      "total_points": 23,
+      "total_points": 30,
       "activity_breakdown": {
         "PR opened": {
-          "count": 5,
-          "points": 10
+          "count": 6,
+          "points": 12
         },
         "PR merged": {
-          "count": 2,
-          "points": 10
+          "count": 3,
+          "points": 15
         },
         "Issue opened": {
           "count": 3,
@@ -267,6 +257,11 @@
         }
       },
       "daily_activity": [
+        {
+          "date": "2025-12-18",
+          "count": 1,
+          "points": 2
+        },
         {
           "date": "2025-12-13",
           "count": 1,
@@ -291,6 +286,11 @@
           "date": "2025-11-30",
           "count": 1,
           "points": 2
+        },
+        {
+          "date": "2025-12-19",
+          "count": 1,
+          "points": 5
         },
         {
           "date": "2025-12-16",
@@ -447,36 +447,42 @@
       ]
     },
     {
-      "username": "SouparnaChatterjee",
+      "username": "Teesta-Mukherjee",
       "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/115988950?v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/168867474?v=4",
       "role": "Contributor",
-      "total_points": 9,
+      "total_points": 10,
       "activity_breakdown": {
         "PR opened": {
-          "count": 2,
-          "points": 4
-        },
-        "PR merged": {
-          "count": 1,
-          "points": 5
+          "count": 5,
+          "points": 10
         }
       },
       "daily_activity": [
         {
-          "date": "2025-11-19",
+          "date": "2025-12-18",
           "count": 1,
           "points": 2
         },
         {
-          "date": "2025-11-19",
+          "date": "2025-12-18",
           "count": 1,
           "points": 2
         },
         {
-          "date": "2025-11-19",
+          "date": "2025-12-18",
           "count": 1,
-          "points": 5
+          "points": 2
+        },
+        {
+          "date": "2025-12-17",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-12",
+          "count": 1,
+          "points": 2
         }
       ]
     },
@@ -628,36 +634,6 @@
       ]
     },
     {
-      "username": "Teesta-Mukherjee",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/168867474?v=4",
-      "role": "Contributor",
-      "total_points": 6,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 3,
-          "points": 6
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-18",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-17",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-12",
-          "count": 1,
-          "points": 2
-        }
-      ]
-    },
-    {
       "username": "manmeetsantre",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/190877081?v=4",
@@ -726,6 +702,45 @@
       ]
     },
     {
+      "username": "ys748477-dotcom",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/235941943?v=4",
+      "role": "Contributor",
+      "total_points": 5,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        },
+        "Issue opened": {
+          "count": 3,
+          "points": 3
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-17",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-19",
+          "count": 1,
+          "points": 1
+        },
+        {
+          "date": "2025-12-07",
+          "count": 1,
+          "points": 1
+        },
+        {
+          "date": "2025-12-07",
+          "count": 1,
+          "points": 1
+        }
+      ]
+    },
+    {
       "username": "ThatDeparted2061",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/166894150?v=4",
@@ -746,36 +761,27 @@
       ]
     },
     {
-      "username": "ys748477-dotcom",
+      "username": "UtkarsHMer05",
       "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/235941943?v=4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157891400?v=4",
       "role": "Contributor",
       "total_points": 4,
       "activity_breakdown": {
         "PR opened": {
-          "count": 1,
-          "points": 2
-        },
-        "Issue opened": {
           "count": 2,
-          "points": 2
+          "points": 4
         }
       },
       "daily_activity": [
         {
-          "date": "2025-12-17",
+          "date": "2025-12-18",
           "count": 1,
           "points": 2
         },
         {
-          "date": "2025-12-07",
+          "date": "2025-12-18",
           "count": 1,
-          "points": 1
-        },
-        {
-          "date": "2025-12-07",
-          "count": 1,
-          "points": 1
+          "points": 2
         }
       ]
     },
@@ -1035,6 +1041,46 @@
           "date": "2025-12-03",
           "count": 1,
           "points": 1
+        }
+      ]
+    },
+    {
+      "username": "kris70lesgo",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/170333495?v=4",
+      "role": "Contributor",
+      "total_points": 2,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-19",
+          "count": 1,
+          "points": 2
+        }
+      ]
+    },
+    {
+      "username": "Vibhay007",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/197410229?v=4",
+      "role": "Contributor",
+      "total_points": 2,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-19",
+          "count": 1,
+          "points": 2
         }
       ]
     },
@@ -1299,6 +1345,51 @@
       ]
     },
     {
+      "username": "SouparnaChatterjee",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/115988950?v=4",
+      "role": "Contributor",
+      "total_points": 2,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-11-19",
+          "count": 1,
+          "points": 2
+        }
+      ]
+    },
+    {
+      "username": "Aakansha-Chavan",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/181594189?v=4",
+      "role": "Contributor",
+      "total_points": 2,
+      "activity_breakdown": {
+        "Issue opened": {
+          "count": 2,
+          "points": 2
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-19",
+          "count": 1,
+          "points": 1
+        },
+        {
+          "date": "2025-12-06",
+          "count": 1,
+          "points": 1
+        }
+      ]
+    },
+    {
       "username": "ManshaAgarwal716",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/218825298?v=4",
@@ -1363,26 +1454,6 @@
       "daily_activity": [
         {
           "date": "2025-12-07",
-          "count": 1,
-          "points": 1
-        }
-      ]
-    },
-    {
-      "username": "Aakansha-Chavan",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/181594189?v=4",
-      "role": "Contributor",
-      "total_points": 1,
-      "activity_breakdown": {
-        "Issue opened": {
-          "count": 1,
-          "points": 1
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-06",
           "count": 1,
           "points": 1
         }
