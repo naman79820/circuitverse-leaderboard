@@ -3,7 +3,7 @@ import path from "path";
 
 const ORG = "CircuitVerse";
 const GITHUB_API = "https://api.github.com";
-const TOKEN = "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";
+const TOKEN = process.env.GITHUB_TOKEN;
 
 if (!TOKEN) {
   throw new Error("GITHUB_TOKEN is required");
