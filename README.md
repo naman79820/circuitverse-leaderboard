@@ -121,14 +121,24 @@ Bot accounts such as `dependabot[bot]`, `github-actions[bot]`, and any user endi
 
 ---
 
+## 🔐 Environment Setup (for local data generation)
+
+Create a `.env.local` file in the project root and add:
+
+```env
+GITHUB_TOKEN=ghp_your_token_here
+```
+
+This token is **only required** if you want to fetch and generate leaderboard data locally.
+
+---
+
 ## 🚀 Local Development
 
 ```bash
 npm install
 npm run dev
 ```
-
-No GitHub token is required to view the leaderboard locally.
 
 ---
 
