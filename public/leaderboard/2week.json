@@ -1,8 +1,8 @@
 {
   "period": "2week",
-  "updatedAt": 1766262971399,
-  "startDate": "2025-12-06",
-  "endDate": "2025-12-20",
+  "updatedAt": 1766279480743,
+  "startDate": "2025-12-07",
+  "endDate": "2025-12-21",
   "hiddenRoles": [],
   "entries": [
     {
@@ -987,26 +987,6 @@
       ]
     },
     {
-      "username": "yats0x7",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/217891881?v=4",
-      "role": "Contributor",
-      "total_points": 2,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 1,
-          "points": 2
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-06",
-          "count": 1,
-          "points": 2
-        }
-      ]
-    },
-    {
       "username": "ManshaAgarwal716",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/218825298?v=4",
@@ -1655,17 +1635,6 @@
       "contributor": "ghanshyam2005singh",
       "contributor_name": "ghanshyam2005singh",
       "contributor_avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4"
-    },
-    {
-      "slug": "pr-opened-3702605723",
-      "type": "PR opened",
-      "title": "Fix: Update favicon link to resolve display issue",
-      "occured_at": "2025-12-06T22:45:51Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6441",
-      "contributor": "yats0x7",
-      "contributor_name": "yats0x7",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/217891881?v=4"
     },
     {
       "slug": "pr-merged-3750110457",
