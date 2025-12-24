@@ -31,23 +31,23 @@ const Navbar = ({ config }: NavbarProps) => {
     <>
       {/* Desktop Navbar */}
       <header className="sticky top-0 z-40 border-b border-zinc-200/60 dark:border-white/10 bg-background/80 backdrop-blur-md">
-        <div className="relative mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="relative mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
               src={config.org.logo_url}
               alt={config.org.name}
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               className="rounded-md"
             />
-            <span className="font-semibold text-base">
+            <span className="font-semibold text-lg">
               {config.org.name}
             </span>
           </Link>
 
           {/* Nav Links */}
-          <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border bg-background/90 backdrop-blur shadow-sm px-1.5 py-0.5">
+          <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border bg-background/90 backdrop-blur shadow-sm px-2 py-1">
             {navItems.map((item) => {
               const active = isActive(item.href);
 
@@ -56,7 +56,7 @@ const Navbar = ({ config }: NavbarProps) => {
                   key={item.name}
                   href={item.href}
                   className={`
-                    px-3.5 py-1 text-sm font-medium rounded-full transition-all
+                    px-4 py-1.5 text-sm font-medium rounded-full transition-all
                     ${
                       active
                         ? "bg-[#50B78B]/20 text-[#50B78B] dark:bg-[#50B78B]/30 dark:text-[#50B78B]"
