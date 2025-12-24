@@ -3,11 +3,17 @@ import Link from "next/link";
 import { getConfig } from "@/lib/config";
 import type { Metadata } from "next";
 
-async function fetchPeople() {
+interface Person {
+  username: string;
+  name: string | null;
+  avatar_url: string;
+}
+
+async function fetchPeople(): Promise<{ updatedAt: number; people: Person[] }> {
   const base = process.env.NEXT_PUBLIC_BASE_URL ?? "";
   const res = await fetch(`${base}/api/people`, { cache: "no-store" });
-  if (!res.ok) return { updatedAt: Date.now(), people: [] as any[] };
-  return res.json() as Promise<{ updatedAt: number; people: any[] }>;
+  if (!res.ok) return { updatedAt: Date.now(), people: [] };
+  return res.json() as Promise<{ updatedAt: number; people: Person[] }>;
 }
 
 export async function generateMetadata(): Promise<Metadata> {

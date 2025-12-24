@@ -1,6 +1,5 @@
 // lib/db.ts — temporary stub (no DB)
 
-import { UserEntry } from "@/scripts/generateLeaderboard";
 import fs from "fs";
 import path from "path";
 
@@ -25,11 +24,7 @@ export type ActivityGroup = {
   activities: ActivityItem[];
 };
 
-type RecentActivitiesJSON = {
-  updatedAt: number;
-  entries: UserEntry[];
-  groups: ActivityGroup[];
-};
+
 
 // Used by app/page.tsx
 // export async function getRecentActivitiesGroupedByType(valid: "week" | "month" | "year"): Promise<ActivityGroup[]> {
@@ -161,10 +156,10 @@ export async function getAllContributorUsernames() {
   return [];
 }
 
-export async function getContributor(_username: string) {
+export async function getContributor() {
   return null;
 }
 
-export async function getContributorProfile(_username: string) {
+export async function getContributorProfile() {
   return { contributor: null, activities: [], totalPoints: 0, activityByDate: {} };
 }

@@ -1,7 +1,7 @@
-export const CustomPieTooltip = ({ active, payload }: any) => {
+export const CustomPieTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{ payload: { name?: string; value: number; color?: string } }> }) => {
   if (!active || !payload?.length) return null;
 
-  const { name = "Activities", value, color } = payload[0].payload;
+  const { name = "Activities", value, color } = payload?.[0]?.payload || {};
 
   return (
     <div className="rounded-lg flex items-center gap-2 border bg-white dark:border-white/10 dark:bg-zinc-900/95 px-3 py-2 text-xs shadow-xl">

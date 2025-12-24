@@ -41,7 +41,7 @@ function sleep(ms: number) {
 }
 
 // GitHub Search API: 30 req/min limit → throttle
-async function ghSearch(url: string) {
+async function ghSearch(url: string): Promise<{ items?: GitHubItem[] }> {
   const res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -57,7 +57,7 @@ async function ghSearch(url: string) {
   // ⛔ mandatory throttle
   await sleep(2500);
 
-  return res.json();
+  return res.json() as Promise<{ items?: GitHubItem[] }>;
 }
 
 function iso(d: Date) {
@@ -72,7 +72,7 @@ function daysAgo(n: number) {
 
 /* ================= FILTERS ================= */
 
-function isBotUser(user: any): boolean {
+function isBotUser(user: { login?: string; type?: string }): boolean {
   if (!user?.login) return true;
   if (user.type && user.type !== "User") return true;
   return user.login.endsWith("[bot]");
@@ -97,9 +97,25 @@ export type UserEntry = {
   }[];
 };
 
+type GitHubItem = {
+  user: {
+    login: string;
+    name?: string | null;
+    avatar_url?: string | null;
+    type?: string;
+  };
+  created_at: string;
+  closed_at: string;
+  title?: string | null;
+  html_url?: string | null;
+};
+
 /* ================= HELPERS ================= */
 
-function ensureUser(map: Map<string, UserEntry>, user: any) {
+function ensureUser(
+  map: Map<string, UserEntry>,
+  user: { login: string; name?: string | null; avatar_url?: string | null }
+) {
   if (!map.has(user.login)) {
     map.set(user.login, {
       username: user.login,
@@ -120,7 +136,7 @@ function addActivity(
   type: "PR opened" | "PR merged" | "Issue opened",
   date: string,
   points: number,
-  meta?: { title?: string; link?: string }
+  meta?: { title?: string | null; link?: string | null }
 ) {
   const day = date.split("T")[0]!;
 
@@ -155,8 +171,8 @@ async function searchByDateChunks(
   start: Date,
   end: Date,
   stepDays = 30
-): Promise<any[]> {
-  const all: any[] = [];
+): Promise<GitHubItem[]> {
+  const all: GitHubItem[] = [];
   let cursor = new Date(start);
 
   while (cursor < end) {
@@ -272,7 +288,7 @@ async function generateYear() {
 
 /* ================= DERIVED PERIODS ================= */
 
-function derivePeriod(source: any, days: number, period: string) {
+function derivePeriod(source: { entries: UserEntry[] }, days: number, period: string) {
   const cutoff = daysAgo(days);
 
   const entries = source.entries
@@ -328,8 +344,8 @@ function derivePeriod(source: any, days: number, period: string) {
         })),
       };
     })
-    .filter(Boolean)
-    .sort((a: any, b: any) => b.total_points - a.total_points);
+    .filter((e): e is NonNullable<typeof e> => e !== null)
+    .sort((a, b) => b.total_points - a.total_points);
 
   fs.writeFileSync(
     path.join(process.cwd(), "public", "leaderboard", `${period}.json`),
@@ -353,9 +369,9 @@ function derivePeriod(source: any, days: number, period: string) {
 
 /* ================= RECENT ACTIVITIES ================= */
 
-function generateRecentActivities(source: any, days = 14) {
+function generateRecentActivities(source: { entries: UserEntry[] }, days = 14) {
   const cutoff = daysAgo(days);
-  const groups = new Map<string, any[]>();
+  const groups = new Map<string, Array<{ username: string; name: string | null; title: string | null; link: string | null; avatar_url: string | null; points: number }>>();
 
   for (const entry of source.entries) {
     for (const act of entry.raw_activities) {
@@ -366,8 +382,8 @@ function generateRecentActivities(source: any, days = 14) {
       groups.get(day)!.push({
         username: entry.username,
         name: entry.name,
-        title: act.title,
-        link: act.link,
+        title: act.title ?? null,
+        link: act.link ?? null,
         avatar_url: entry.avatar_url,
         points: act.points,
       });
