@@ -167,4 +167,4 @@ npx tsx scripts/generateLeaderboard.ts
 Please keep changes small and add context in PR description. For questions, Contant on slack.
 
 ##  Demo Site
-https://circuitverse-leaderboard.vercel.app/
+[https://cv-community-dashboard.netlify.app/](https://cv-community-dashboard.netlify.app/)

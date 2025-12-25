@@ -1,9 +1,54 @@
 {
-  "updatedAt": 1766579502307,
+  "updatedAt": 1766665720569,
   "groups": [
+    {
+      "date": "2025-12-25",
+      "items": [
+        {
+          "username": "senutpal",
+          "name": null,
+          "title": "docs - fix typos and grammar errors in chapters 2-7",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/465",
+          "avatar_url": "https://avatars.githubusercontent.com/u/168703537?v=4",
+          "points": 5
+        },
+        {
+          "username": "Teesta-Mukherjee",
+          "name": null,
+          "title": "Fix properties panel disappearing after closing Edit Layout",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6505",
+          "avatar_url": "https://avatars.githubusercontent.com/u/168867474?v=4",
+          "points": 2
+        },
+        {
+          "username": "Me-Priyank",
+          "name": null,
+          "title": "Pagination implemented",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/1",
+          "avatar_url": "https://avatars.githubusercontent.com/u/143987856?v=4",
+          "points": 2
+        },
+        {
+          "username": "Me-Priyank",
+          "name": null,
+          "title": "#472 fixed (proper optimization implemented)",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/473",
+          "avatar_url": "https://avatars.githubusercontent.com/u/143987856?v=4",
+          "points": 2
+        }
+      ]
+    },
     {
       "date": "2025-12-24",
       "items": [
+        {
+          "username": "senutpal",
+          "name": null,
+          "title": "docs - fix typo 'scoll' to 'scroll' in keyboard shortcuts documentation",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/459",
+          "avatar_url": "https://avatars.githubusercontent.com/u/168703537?v=4",
+          "points": 5
+        },
         {
           "username": "ghanshyam2005singh",
           "name": null,
@@ -26,6 +71,30 @@
           "title": "Enhancement - Add hover-to-open functionality for \"Getting Started\" navbar dropdown",
           "link": "https://github.com/CircuitVerse/CircuitVerse/issues/6501",
           "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
+          "points": 1
+        },
+        {
+          "username": "SouparnaChatterjee",
+          "name": null,
+          "title": "perf - improve draggable panel performance in simulator",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/issues/6504",
+          "avatar_url": "https://avatars.githubusercontent.com/u/115988950?v=4",
+          "points": 1
+        },
+        {
+          "username": "akshitvigg",
+          "name": null,
+          "title": "Fix grammar error - change 'an CircuitVerse' to 'a CircuitVerse' in LMS integration docs",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/461",
+          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
+          "points": 5
+        },
+        {
+          "username": "Me-Priyank",
+          "name": null,
+          "title": "Docs Website Performance Issue - Large Unused JavaScript & CSS and Low Code Coverage (27%)",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/issues/472",
+          "avatar_url": "https://avatars.githubusercontent.com/u/143987856?v=4",
           "points": 1
         },
         {
@@ -166,6 +235,22 @@
           "title": "chore - install netcat-openbsd and fix bundler setup in devcontainer",
           "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6490",
           "avatar_url": "https://avatars.githubusercontent.com/u/65150640?v=4",
+          "points": 2
+        },
+        {
+          "username": "Nihal4777",
+          "name": null,
+          "title": "chore - install netcat-openbsd and fix bundler setup in devcontainer",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6490",
+          "avatar_url": "https://avatars.githubusercontent.com/u/65150640?v=4",
+          "points": 5
+        },
+        {
+          "username": "Nihal4777",
+          "name": null,
+          "title": "chore - install netcat-openbsd and fix bundler setup in devcontainer",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6490",
+          "avatar_url": "https://avatars.githubusercontent.com/u/65150640?v=4",
           "points": 5
         },
         {
@@ -182,6 +267,30 @@
           "title": "Fixed NoMethodError in NotifyUser Service",
           "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6491",
           "avatar_url": "https://avatars.githubusercontent.com/u/182099875?v=4",
+          "points": 2
+        },
+        {
+          "username": "Agarwalchetan",
+          "name": null,
+          "title": "Fixed Search Query Timeout Issue",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6492",
+          "avatar_url": "https://avatars.githubusercontent.com/u/182099875?v=4",
+          "points": 2
+        },
+        {
+          "username": "Agarwalchetan",
+          "name": null,
+          "title": "Fixed NoMethodError in NotifyUser Service",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6491",
+          "avatar_url": "https://avatars.githubusercontent.com/u/182099875?v=4",
+          "points": 2
+        },
+        {
+          "username": "sai-ganesh-1706",
+          "name": null,
+          "title": "Prevent redundant event rescheduling in simulator event queue",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6493",
+          "avatar_url": "https://avatars.githubusercontent.com/u/191041304?v=4",
           "points": 2
         },
         {
@@ -214,44 +323,12 @@
           "points": 1
         },
         {
-          "username": "Aakansha-Chavan",
-          "name": null,
-          "title": "UI bug - Change focus border color on Contact Us form from red to green",
-          "link": "https://github.com/CircuitVerse/Blog/issues/257",
-          "avatar_url": "https://avatars.githubusercontent.com/u/181594189?v=4",
-          "points": 1
-        },
-        {
           "username": "ShashwatXD",
           "name": null,
           "title": "feat(groups) - add pull-to-refresh functionality to groups page",
           "link": "https://github.com/CircuitVerse/mobile-app/pull/454",
           "avatar_url": "https://avatars.githubusercontent.com/u/71784456?v=4",
           "points": 2
-        },
-        {
-          "username": "ShashwatXD",
-          "name": null,
-          "title": "feat(groups) - add pull-to-refresh functionality to groups page",
-          "link": "https://github.com/CircuitVerse/mobile-app/pull/454",
-          "avatar_url": "https://avatars.githubusercontent.com/u/71784456?v=4",
-          "points": 2
-        },
-        {
-          "username": "ShashwatXD",
-          "name": null,
-          "title": "FEATURE REQUEST Add invite acceptance flow in app",
-          "link": "https://github.com/CircuitVerse/mobile-app/issues/455",
-          "avatar_url": "https://avatars.githubusercontent.com/u/71784456?v=4",
-          "points": 1
-        },
-        {
-          "username": "ShashwatXD",
-          "name": null,
-          "title": "Add pull to refresh functionality",
-          "link": "https://github.com/CircuitVerse/mobile-app/issues/453",
-          "avatar_url": "https://avatars.githubusercontent.com/u/71784456?v=4",
-          "points": 1
         },
         {
           "username": "ShashwatXD",
@@ -278,35 +355,11 @@
           "points": 1
         },
         {
-          "username": "ys748477-dotcom",
-          "name": null,
-          "title": "🐞 Bug - Wire routing parity issue - cv-frontend-vue does not support orthogonal (zig-zag) wires",
-          "link": "https://github.com/CircuitVerse/cv-frontend-vue/issues/696",
-          "avatar_url": "https://avatars.githubusercontent.com/u/235941943?v=4",
-          "points": 1
-        },
-        {
           "username": "kris70lesgo",
           "name": null,
           "title": "docs - add Redis startup instructions for Linux and macOS",
           "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6486",
           "avatar_url": "https://avatars.githubusercontent.com/u/170333495?v=4",
-          "points": 2
-        },
-        {
-          "username": "kris70lesgo",
-          "name": null,
-          "title": "docs - add Redis startup instructions for Linux and macOS",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6486",
-          "avatar_url": "https://avatars.githubusercontent.com/u/170333495?v=4",
-          "points": 2
-        },
-        {
-          "username": "Vibhay007",
-          "name": null,
-          "title": "Fix bug #668",
-          "link": "https://github.com/CircuitVerse/Interactive-Book/pull/743",
-          "avatar_url": "https://avatars.githubusercontent.com/u/197410229?v=4",
           "points": 2
         },
         {
@@ -711,67 +764,6 @@
           "link": "https://github.com/CircuitVerse/CircuitVerse/issues/6463",
           "avatar_url": "https://avatars.githubusercontent.com/u/197673239?v=4",
           "points": 1
-        }
-      ]
-    },
-    {
-      "date": "2025-12-11",
-      "items": [
-        {
-          "username": "senutpal",
-          "name": null,
-          "title": "refactor - migrate verilogHelpers.js to TypeScript",
-          "link": "https://github.com/CircuitVerse/cv-frontend-vue/pull/693",
-          "avatar_url": "https://avatars.githubusercontent.com/u/168703537?v=4",
-          "points": 2
-        },
-        {
-          "username": "Radhikaa-chauhan",
-          "name": null,
-          "title": "Fix responsiveness issue on small screens (#449)",
-          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/450",
-          "avatar_url": "https://avatars.githubusercontent.com/u/148184013?v=4",
-          "points": 2
-        },
-        {
-          "username": "Radhikaa-chauhan",
-          "name": null,
-          "title": "WSL documentation shows incorrect Redis setup commands",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/issues/6461",
-          "avatar_url": "https://avatars.githubusercontent.com/u/148184013?v=4",
-          "points": 1
-        },
-        {
-          "username": "Radhikaa-chauhan",
-          "name": null,
-          "title": "Docs UI - Content not responsive on mobile view .",
-          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/issues/449",
-          "avatar_url": "https://avatars.githubusercontent.com/u/148184013?v=4",
-          "points": 1
-        },
-        {
-          "username": "samarthnaikk",
-          "name": null,
-          "title": "docs - fix Redis command and correct minor spelling mistakes",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6462",
-          "avatar_url": "https://avatars.githubusercontent.com/u/177600946?v=4",
-          "points": 2
-        },
-        {
-          "username": "ayuxsh009",
-          "name": null,
-          "title": "Fix #6454 - Handle Recaptcha - - RecaptchaError gracefully",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6460",
-          "avatar_url": "https://avatars.githubusercontent.com/u/149216976?v=4",
-          "points": 2
-        },
-        {
-          "username": "rehanshuraj",
-          "name": null,
-          "title": "fix/ReadtimeoutError",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6459",
-          "avatar_url": "https://avatars.githubusercontent.com/u/197035425?v=4",
-          "points": 2
         }
       ]
     }
