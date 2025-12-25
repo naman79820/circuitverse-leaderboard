@@ -89,7 +89,7 @@ export default async function Home() {
                 <PaginatedActivitySection
                   key={group.activity_definition}
                   group={group}
-                  itemsPerPage={9}
+                  itemsPerPage={10}
                 />
               ))}
             </div>
