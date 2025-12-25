@@ -30,10 +30,18 @@ import {
 } from "@/components/ui/chart";
 
 // --- 1. Custom Label Component ---
-const CustomPeakLabel = (props: any) => {
+interface PeakLabelProps {
+  x?: number;
+  y?: number;
+  index?: number;
+  chartData?: Array<{ isPeak: boolean }>;
+  color?: string;
+}
+
+const CustomPeakLabel = (props: PeakLabelProps) => {
   const { x, y, index, chartData, color } = props;
 
-  if (!chartData || !chartData[index]) return null;
+  if (index === undefined || !chartData || !chartData[index]) return null;
 
   const isPeak = chartData[index].isPeak;
   if (!isPeak) return null;

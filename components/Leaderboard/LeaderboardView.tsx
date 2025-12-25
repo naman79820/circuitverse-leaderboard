@@ -205,7 +205,7 @@ export default function LeaderboardView({
           <div className="mb-8">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h1 className="text-4xl text-[#50B78B] font-bold mb-2">
+                <h1 className="text-2xl sm:text-4xl text-[#50B78B] font-bold mb-2">
                   {periodLabels[period]} Leaderboard
                 </h1>
                 <p className="text-muted-foreground">
@@ -335,43 +335,55 @@ export default function LeaderboardView({
                   <Card
                     key={entry.username}
                     className={cn(
-                      "transition-all hover:shadow-md",
+                      "transition-all hover:shadow-md overflow-hidden",
                       isTopThree && "border-[#50B78B]/50"
                     )}
                   >
-                    <CardContent>
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                        {/* Top Section: Rank, Avatar, and Mobile Points */}
+                        <div className="flex items-center gap-4 sm:gap-6">
+                          {/* Rank */}
+                          <div className="flex items-center justify-center size-10 sm:size-12 shrink-0">
+                            {getRankIcon(rank) || (
+                              <span className="text-xl sm:text-2xl font-bold text-[#50B78B]">
+                                {rank}
+                              </span>
+                            )}
+                          </div>
 
-                        {/* Rank */}
-                        <div className="flex items-center justify-center size-12 shrink-0">
-                          {getRankIcon(rank) || (
-                            <span className="text-2xl font-bold text-[#50B78B]">
-                              {rank}
-                            </span>
-                          )}
+                          {/* Avatar */}
+                          <Avatar className="size-12 sm:size-14 shrink-0 border-2 border-background shadow-sm">
+                            <AvatarImage
+                              src={entry.avatar_url || undefined}
+                              alt={entry.name || entry.username}
+                            />
+                            <AvatarFallback className="bg-[#50B78B]/5 text-[#50B78B]">
+                              {(entry.name || entry.username)
+                                .substring(0, 2)
+                                .toUpperCase()}
+                            </AvatarFallback>
+                          </Avatar>
+
+                          {/* Mobile-only Points Section */}
+                          <div className="flex flex-col ml-auto sm:hidden items-end">
+                            <div className="text-2xl font-bold text-[#50B78B] leading-none">
+                              {entry.total_points}
+                            </div>
+                            <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium mt-1">
+                              pts
+                            </div>
+                          </div>
                         </div>
 
-                        {/* Avatar */}
-                        <Avatar className="size-14 shrink-0">
-                          <AvatarImage
-                            src={entry.avatar_url || undefined}
-                            alt={entry.name || entry.username}
-                          />
-                          <AvatarFallback>
-                            {(entry.name || entry.username)
-                              .substring(0, 2)
-                              .toUpperCase()}
-                          </AvatarFallback>
-                        </Avatar>
-
-                        {/* Contributor Info */}
+                        {/* Contributor Info & Identity */}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap mb-1">
-                            <h3 className="text-lg font-semibold">
+                            <h3 className="text-base sm:text-lg font-bold truncate">
                               {entry.name || entry.username}
                             </h3>
                             {entry.role && (
-                              <span className="text-xs px-2 py-1 rounded-full bg-[#50B78B]/10 text-[#50B78B]">
+                              <span className="text-[10px] sm:text-xs px-2 py-0.5 rounded-full bg-[#50B78B]/10 text-[#50B78B] font-medium border border-[#50B78B]/20">
                                 {entry.role}
                               </span>
                             )}
@@ -381,56 +393,54 @@ export default function LeaderboardView({
                             href={`https://github.com/${entry.username}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm text-muted-foreground hover:text-[#50B78B] transition-colors"
+                            className="text-xs sm:text-sm text-muted-foreground hover:text-[#50B78B] transition-colors flex items-center gap-1"
                           >
                             @{entry.username}
                           </a>
 
-                          <div className="mb-3" />
+                          <div className="mt-3" />
 
-                          {/* Activity Breakdown */}
-                          <div className="flex flex-wrap gap-3">
+                          {/* Activity Breakdown - Improved Wrapping */}
+                          <div className="flex flex-wrap gap-2 sm:gap-3">
                             {Object.entries(entry.activity_breakdown)
                               .sort((a, b) => b[1].points - a[1].points)
                               .map(([activityName, data]) => (
                                 <div
                                   key={activityName}
-                                  className="text-xs bg-muted px-3 py-1 rounded-full"
+                                  className="text-[10px] sm:text-xs bg-muted/50 border border-border/50 px-2.5 py-1 rounded-full flex items-center gap-1.5"
                                 >
-                                  <span className="font-medium">
-                                    {activityName}:
-                                  </span>{" "}
-                                  <span className="text-muted-foreground">
-                                    {data.count}
+                                  <span className="font-semibold text-foreground">
+                                    {activityName}
                                   </span>
-                                  {data.points > 0 && (
-                                    <span className="text-[#50B78B] ml-1">
-                                      (+{data.points})
-                                    </span>
-                                  )}
+                                  <span className="h-3 w-[1px] bg-border" />
+                                  <span className="text-[#50B78B] font-bold">
+                                    +{data.points}
+                                  </span>
                                 </div>
                               ))}
                           </div>
                         </div>
 
-                        {/* Total Points with Trend Chart */}
-                        <div className="flex items-center gap-4 shrink-0">
-                          <div className="hidden sm:block">
+                        {/* Desktop-only Stats & Trend Section */}
+                        <div className="hidden sm:flex items-center gap-6 shrink-0 border-l pl-6 border-border/50">
                           {/* Activity Trend Chart */}
                           {entry.daily_activity &&
                             entry.daily_activity.length > 0 && (
-                              <ActivityTrendChart
-                                dailyActivity={entry.daily_activity}
-                                startDate={startDate}
-                                endDate={endDate}
-                                mode="points"
-                              />
-                            )}</div>
-                          <div className="text-right">
-                            <div className="text-3xl font-bold text-[#50B78B]">
+                              <div className="opacity-80 hover:opacity-100 transition-opacity">
+                                <ActivityTrendChart
+                                  dailyActivity={entry.daily_activity}
+                                  startDate={startDate}
+                                  endDate={endDate}
+                                  mode="points"
+                                />
+                              </div>
+                            )}
+                          
+                          <div className="text-right min-w-[60px]">
+                            <div className="text-3xl font-black text-[#50B78B] tracking-tight">
                               {entry.total_points}
                             </div>
-                            <div className="text-xs text-muted-foreground">
+                            <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">
                               points
                             </div>
                           </div>
