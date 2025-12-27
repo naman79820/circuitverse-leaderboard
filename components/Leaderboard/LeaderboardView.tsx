@@ -391,7 +391,21 @@ export default function LeaderboardView({
                           {/* Activity Breakdown */}
                           <div className="flex flex-wrap gap-3">
                             {Object.entries(entry.activity_breakdown)
-                              .sort((a, b) => b[1].points - a[1].points)
+                              .sort((a, b) => {
+                                // Predefined priority order for consistent display across rows
+                                const activityPriority: Record<string, number> = {
+                                  "PR merged": 1,
+                                  "PR opened": 2,
+                                  "Issue opened": 3,
+                                };
+                                const priorityA = activityPriority[a[0]] ?? 99;
+                                const priorityB = activityPriority[b[0]] ?? 99;
+                                // Sort by priority first, then alphabetically for unknown activities
+                                if (priorityA !== priorityB) {
+                                  return priorityA - priorityB;
+                                }
+                                return a[0].localeCompare(b[0]);
+                              })
                               .map(([activityName, data]) => (
                                 <div
                                   key={activityName}
