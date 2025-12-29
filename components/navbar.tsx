@@ -5,7 +5,7 @@ import { Config } from "@/types/config";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Trophy, Users } from "lucide-react";
+import { Home, Trophy, Users, Github } from "lucide-react";
 import { useScrollDirection } from "@/lib/hooks/useScrollDirection";
 import { Button } from "./ui/button";
 
@@ -83,13 +83,7 @@ const Navbar = ({ config }: NavbarProps) => {
               target="_blank"
             >
               <Button variant={"outline"} size={"icon"}>
-                <Image
-                  src="github.svg"
-                  alt="GitHub"
-                  width={17}
-                  height={17}
-                  className="dark:invert cursor-pointer hover:opacity-80 transition-opacity"
-                />
+                <Github className="h-4 w-4" />
               </Button>
             </Link>
             <ThemeSelector />

@@ -125,7 +125,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
       
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-1">
-          <Card className="sticky top-4 bg-linear-to-br from-background via-background to-muted/20 shadow-lg border-0 ring-1 ring-border">
+          <Card className="sticky top-4 bg-gradient-to-br from-background via-background to-muted/20 shadow-lg border-0 ring-1 ring-border">
             <CardContent className="p-6">
               <div className="flex flex-col items-center gap-6">
                 <div className="relative">
@@ -135,14 +135,14 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                       alt={contributor.name || contributor.username}
                       className="object-cover"
                     />
-                    <AvatarFallback className="text-2xl bg-linear-to-br from-primary/30 to-primary/10 text-primary font-bold">
+                    <AvatarFallback className="text-2xl bg-gradient-to-br from-primary/30 to-primary/10 text-primary font-bold">
                       {(contributor.name || contributor.username)
                         .substring(0, 2)
                         .toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
                   {currentStreak > 0 && (
-                    <div className="absolute -bottom-3 -right-3 bg-linear-to-r from-green-500 to-emerald-600 text-white text-xs px-2 py-1 rounded-full font-bold shadow-lg">
+                    <div className="absolute -bottom-3 -right-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs px-2 py-1 rounded-full font-bold shadow-lg">
                       {currentStreak}d streak
                     </div>
                   )}
@@ -157,25 +157,25 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                 </div>
 
                 <div className="w-full grid grid-cols-2 gap-3">
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-linear-to-br from-yellow-50 via-yellow-50 to-yellow-100 dark:from-yellow-400 dark:to-yellow-300 border border-yellow-200 dark:border-yellow-800">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-yellow-50 via-yellow-50 to-yellow-100 dark:from-yellow-400 dark:to-yellow-300 border border-yellow-200 dark:border-yellow-800">
                     <Trophy className="w-6 h-6 text-yellow-600 mb-2" />
                     <span className="font-bold text-xl text-yellow-700">{contributor.total_points || 0}</span>
                     <span className="text-xs text-yellow-600 text-center font-medium">Total Points</span>
                   </div>
                   
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-linear-to-br from-blue-50 via-blue-50 to-blue-100 dark:from-blue-400 dark:to-blue-300 border border-blue-200 dark:border-blue-800">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 dark:from-blue-400 dark:to-blue-300 border border-blue-200 dark:border-blue-800">
                     <Calendar className="w-6 h-6 text-blue-600 mb-2" />
                     <span className="font-bold text-xl text-blue-700">{totalDaysActive}</span>
                     <span className="text-xs text-blue-600 text-center font-medium">Active Days</span>
                   </div>
                   
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-linear-to-br from-green-50 via-green-50 to-green-100 dark:from-green-400 dark:to-green-300 border border-green-200 dark:border-green-800">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-50 via-green-50 to-green-100 dark:from-green-400 dark:to-green-300 border border-green-200 dark:border-green-800">
                     <TrendingUp className="w-6 h-6 text-green-600 mb-2" />
                     <span className="font-bold text-xl text-green-700">{currentStreak}</span>
                     <span className="text-xs text-green-600 text-center font-medium">Day Streak</span>
                   </div>
                   
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-linear-to-br from-purple-50 via-purple-50 to-purple-100 dark:from-purple-400 dark:to-purple-300 border border-purple-200 dark:border-purple-800">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-50 via-purple-50 to-purple-100 dark:from-purple-400 dark:to-purple-300 border border-purple-200 dark:border-purple-800">
                     <Target className="w-6 h-6 text-purple-600 mb-2" />
                     <span className="font-bold text-xl text-purple-700">{averagePointsPerDay}</span>
                     <span className="text-xs text-purple-600 text-center font-medium">Avg/Day</span>
@@ -187,7 +187,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                   target="_blank" rel="noopener noreferrer"
                   className="w-full flex justify-center mt-4"
                 >
-                  <Button className="bg-linear-to-r cursor-pointer from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-md">
+                  <Button className="bg-gradient-to-r cursor-pointer from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-md">
                     <Github className="w-5 h-5" />
                   </Button>
                 </a>
@@ -197,7 +197,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
         </div>
 
         <div className="lg:col-span-3 space-y-8">
-          <Card className="bg-linear-to-r from-primary/5 to-primary/10 border-primary/20">
+          <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-primary">
                 <BarChart3 className="w-5 h-5" />
@@ -237,7 +237,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {sortedActivities.map(([activity, data]) => {
                   return (
-                    <div key={activity} className="group p-5 rounded-xl border bg-linear-to-br from-background to-muted/30 hover:shadow-lg hover:border-primary/30 transition-all duration-200">
+                    <div key={activity} className="group p-5 rounded-xl border bg-gradient-to-br from-background to-muted/30 hover:shadow-lg hover:border-primary/30 transition-all duration-200">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                           {getActivityIcon(activity)}
@@ -285,7 +285,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                         key={`${activity.link}-${index}`}
                         className={`group flex items-start gap-4 p-4 rounded-lg border transition-all duration-200 hover:shadow-md ${
                           isVeryRecent 
-                            ? 'bg-linear-to-r from-primary/5 to-primary/10 border-primary/20 hover:border-primary/40' 
+                            ? 'bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20 hover:border-primary/40' 
                             : 'bg-muted/20 hover:bg-muted/40 hover:border-primary/20'
                         }`}
                       >
