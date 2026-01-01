@@ -50,6 +50,7 @@ export function ContributorCard({
 
   contributor,
   onClick,
+  variant = "grid",
   showStats = true,
 }: ContributorCardProps) {
   const topActivities = sortActivities(
@@ -66,9 +67,11 @@ export function ContributorCard({
 
   return (
     <Card
-      onClick={() => onClick?.(contributor)}
-      className="cursor-pointer hover:shadow-lg transition-all"
+      onClick={() => onClick(contributor)}
+      className={`cursor-pointer hover:shadow-lg transition-all ${variant === "list" ? "flex items-center" : ""
+        }`}
     >
+
       <CardContent className="p-4 text-center">
         <Avatar className="w-20 h-20 mx-auto mb-3">
           <AvatarImage src={contributor.avatar_url} />
