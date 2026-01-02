@@ -22,12 +22,18 @@ interface PaginatedActivitySectionProps {
   itemsPerPage?: number;
 }
 
-/** displaying a paginated list of activities **/  
+/**
+* Displays a paginated list of activities with a sliding window navigation.
+* @param props - Component properties
+* @param props.group - The activity group to display
+* @param props.itemsPerPage - Number of items per page (default: 9)
+* @returns A paginated activity section component
+*/ 
 export function PaginatedActivitySection({
   group,
   itemsPerPage = 9,
 }: PaginatedActivitySectionProps){
-  /** current active pageno.  */
+  /** Current active page number */
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(group.activities.length / itemsPerPage);
@@ -35,38 +41,33 @@ export function PaginatedActivitySection({
   const endIndex = startIndex + itemsPerPage;
   const currentActivities = group.activities.slice(startIndex, endIndex);
 
-  /** # of page buttons visible at once */
+  /** Number of page buttons visible at once */
   const windowSize = 3;
 
-  /** starting pageno. of the visible pagination window */
+  /** Starting page number of the visible pagination window */
   const [windowStart, setWindowStart] = useState(1);
 
-  /** navigate to the next page and shift the pagination window forward when req **/
+  /** Navigate to the next page and shift the pagination window forward when required */
   const goToNext = () => {
-    setCurrentPage((prev) => {
-      const next = Math.min(totalPages, prev + 1);
-      setWindowStart((ws) => {
-        if(next > ws + windowSize - 1){
-          return ws + 1;
-        }
-        return ws;
-      });
-      return next;
+    const nextPage = Math.min(totalPages, currentPage + 1);
+    setCurrentPage(nextPage);
+    setWindowStart((ws) => {
+      if (nextPage > ws + windowSize - 1) {
+        return ws + 1;
+      }
+      return ws;
     });
   };
 
   /** Navigate to the previous page and shift the pagination window backward if required **/
   const goToPrevious = () => {
-    setCurrentPage((prev) => {
-      const next = Math.max(1, prev - 1);
-      setWindowStart((ws) => {
-        if (next < ws) {
-          return ws - 1;
-        }
-        return ws;
-      });
-
-      return next;
+    const nextPage = Math.max(1, currentPage - 1);
+    setCurrentPage(nextPage);
+    setWindowStart((ws) => {
+      if (nextPage < ws) {
+        return ws - 1;
+      }
+      return ws;
     });
   };
 
@@ -177,46 +178,51 @@ export function PaginatedActivitySection({
         {/* Pagination Controls */}
         {totalPages > 1 && (
           <div className="bg-zinc-50 dark:bg-white/5 px-4 py-3 border-t">
-            <div className="flex items-center justify-center gap-1 sm:gap-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={goToPrevious}
-                disabled={currentPage === 1}
-                className="h-8 px-2 sm:px-3 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-[#50B78B] transition-colors disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-inherit disabled:cursor-not-allowed cursor-pointer"
-              >
-                <ChevronLeft className="h-4 w-4" />
-                <span className="hidden sm:inline">Previous</span>
-              </Button>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center justify-center gap-1 sm:gap-2 mx-auto">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={goToPrevious}
+                  disabled={currentPage === 1}
+                  className="h-8 px-2 sm:px-3 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-[#50B78B] transition-colors disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-inherit disabled:cursor-not-allowed cursor-pointer"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                  <span className="hidden sm:inline">Previous</span>
+                </Button>
 
-              <div className="flex items-center gap-1">
-                {getPageNumbers().map((pageNum, index) => (
-                  <Button
-                    key={index}
-                    variant={currentPage === pageNum ? "default" : "ghost"}
-                    size="sm"
-                    onClick={() => goToPage(pageNum)}
-                    className={`h-8 w-8 p-0 cursor-pointer ${
-                      currentPage === pageNum
-                        ? "bg-[#50B78B] text-white"
-                        : "hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-[#50B78B]"
-                    }`}
-                  >
-                    {pageNum}
-                  </Button>
-                ))}
+                <div className="flex items-center gap-1">
+                  {getPageNumbers().map((pageNum, index) => (
+                    <Button
+                      key={`${windowStart}-${pageNum}`}
+                      variant={currentPage === pageNum ? "default" : "ghost"}
+                      size="sm"
+                      onClick={() => goToPage(pageNum)}
+                      className={`h-8 w-8 p-0 cursor-pointer ${
+                        currentPage === pageNum
+                          ? "bg-[#50B78B] text-white"
+                          : "hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-[#50B78B]"
+                      }`}
+                    >
+                      {pageNum}
+                    </Button>
+                  ))}
+                </div>
+
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={goToNext}
+                  disabled={currentPage === totalPages}
+                  className="h-8 px-2 sm:px-3 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-[#50B78B] transition-colors disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-inherit disabled:cursor-not-allowed cursor-pointer"
+                >
+                  <span className="hidden sm:inline">Next</span>
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
               </div>
-
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={goToNext}
-                disabled={currentPage === totalPages}
-                className="h-8 px-2 sm:px-3 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-[#50B78B] transition-colors disabled:opacity-50 disabled:hover:bg-transparent disabled:hover:text-inherit disabled:cursor-not-allowed cursor-pointer"
-              >
-                <span className="hidden sm:inline">Next</span>
-                <ChevronRight className="h-4 w-4" />
-              </Button>
+              <span className="text-xs text-zinc-500 font-mono ml-4 shrink-0">
+                {currentPage} / {totalPages}
+              </span>
             </div>
           </div>
         )}
