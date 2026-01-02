@@ -9,8 +9,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Link from "next/link";
-import { Medal, Trophy, Filter, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { Medal, Trophy, Filter, X, GitMerge, GitPullRequest, AlertCircle } from "lucide-react";
+import {
+  Medal,
+  Trophy,
+  Filter,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+
 import { cn } from "@/lib/utils";
 import { useMemo, useState, useEffect } from "react";
 import { sortEntries, type SortBy } from "@/lib/leaderboard";
