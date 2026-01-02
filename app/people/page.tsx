@@ -114,9 +114,9 @@ export default function PeoplePage() {
   return (
     <div className="mx-auto px-4 py-8 max-w-7xl">
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold mb-4">
+        <h1 className="text-4xl font-extrabold">
           <span className="text-black dark:text-white">Our </span>
-          <span className="text-[#42B883]">People</span>
+          <span className="text-emerald-600 dark:text-emerald-400">People</span>
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
           Meet the team who made CircuitVerse possible.
@@ -181,7 +181,7 @@ export default function PeoplePage() {
               <div className="h-8 bg-muted rounded w-72 mx-auto mb-4" />
               <div className="h-4 bg-muted rounded w-96 mx-auto" />
             </div>
-            
+
             <div className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {Array.from({ length: 4 }).map((_, i) => (
@@ -212,8 +212,12 @@ export default function PeoplePage() {
 
               <div className="text-center py-16">
                 <Loader2 className="w-12 h-12 animate-spin mx-auto mb-4 text-green-600 dark:text-green-400" />
-                <h3 className="text-lg font-semibold mb-2">Loading Community Data</h3>
-                <p className="text-muted-foreground">Fetching team members and contributors...</p>
+                <h3 className="text-lg font-semibold mb-2">
+                  Loading Community Data
+                </h3>
+                <p className="text-muted-foreground">
+                  Fetching team members and contributors...
+                </p>
               </div>
             </div>
           </div>
@@ -222,7 +226,7 @@ export default function PeoplePage() {
         <>
           <TeamSection
             title="Core Team"
-            description="The dedicated team members who lead and maintain CircuitVerse, ensuring the platform continues to evolve and serve the community."
+            description="The dedicated team members who lead and maintain CircuitVerse..."
             members={coreTeam}
             teamType="core"
           />
@@ -241,24 +245,24 @@ export default function PeoplePage() {
                 <span className="text-[#42B883]">Contributors</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Amazing community members who contribute to CircuitVerse through code, documentation, and more.
+                Amazing community members who contribute to CircuitVerse through
+                code, documentation, and more.
               </p>
             </div>
             <div className="flex flex-col gap-4">
-            <PeopleStats 
-              contributors={people} 
-              onContributorClick={handleContributorClick}
-            />
+              <PeopleStats
+                contributors={people}
+                onContributorClick={handleContributorClick}
+              />
 
-            <PeopleGrid
-              contributors={people}
-              onContributorClick={handleContributorClick}
-              viewMode="grid"
-              loading={false}
-            />
+              <PeopleGrid
+                contributors={people}
+                onContributorClick={handleContributorClick}
+                viewMode="grid"
+                loading={false}
+              />
+            </div>
           </div>
-          </div>
-            
         </>
       )}
     </div>
