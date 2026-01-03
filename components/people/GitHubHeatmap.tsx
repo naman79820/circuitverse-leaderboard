@@ -266,82 +266,85 @@ export function GitHubHeatmap({ dailyActivity, className = "" }: HeatmapProps) {
         </p>
       </CardHeader>
       <CardContent>
-        <div className="space-y-3 overflow-x-auto">
-          {/* Month labels */}
-          <div className="relative h-4 min-w-195 sm:min-w-0 ml-8">
-            {monthPositions.map((pos, i) => (
-              <div
-                key={i}
-                className="absolute text-xs text-muted-foreground"
-                style={{ left: `${pos.position}px` }}
-              >
-                {pos.month}
-              </div>
-            ))}
-          </div>
-
-          {/* Day labels and heatmap */}
-          <div className="flex gap-1 min-w-195 sm:min-w-0">
-            {/* Day labels */}
-            <div className="flex flex-col gap-1 text-xs text-muted-foreground w-8 shrink-0 justify-around">
-              {dayLabels.map((label, i) => (
+        <div className="space-y-3">
+          {/* Scrollable heatmap area */}
+          <div className="overflow-x-auto">
+            {/* Month labels */}
+            <div className="relative h-4 min-w-[780px] sm:min-w-0 ml-8">
+              {monthPositions.map((pos, i) => (
                 <div
                   key={i}
-                  className={`h-3 leading-3 ${i % 2 === 0 ? "" : "opacity-0"}`}
+                  className="absolute text-xs text-muted-foreground"
+                  style={{ left: `${pos.position}px` }}
                 >
-                  {i % 2 === 0 ? label : ""}
+                  {pos.month}
                 </div>
               ))}
             </div>
 
-            {/* Heatmap grid */}
-            <div className="flex gap-1">
-              {weeks.map((week, weekIndex) => (
-                <div key={weekIndex} className="flex flex-col gap-1 shrink-0">
-                  {week.map((day, dayIndex) => {
-                    const level =
-                      day.date && !day.isFuture
-                        ? getContributionLevel(day.points)
-                        : 0;
-                    const isEmpty = !day.date;
-                    const isFuture = day.isFuture;
+            {/* Day labels and heatmap */}
+            <div className="flex gap-1 min-w-[780px] sm:min-w-0">
+              {/* Day labels */}
+              <div className="flex flex-col gap-1 text-xs text-muted-foreground w-8 shrink-0 justify-around">
+                {dayLabels.map((label, i) => (
+                  <div
+                    key={i}
+                    className={`h-3 leading-3 ${i % 2 === 0 ? "" : "opacity-0"}`}
+                  >
+                    {i % 2 === 0 ? label : ""}
+                  </div>
+                ))}
+              </div>
 
-                    return (
-                      <div
-                        key={`${weekIndex}-${dayIndex}`}
-                        className={`w-3 h-3 rounded-sm border border-border/30 transition-all duration-200 ${
-                          isEmpty
-                            ? "bg-transparent border-transparent"
-                            : isFuture
-                            ? "bg-muted/30 dark:bg-muted/20 cursor-default"
-                            : `${getContributionColor(
-                                level
-                              )} hover:ring-2 hover:ring-primary hover:scale-110 cursor-pointer`
-                        } ${
-                          day.isToday
-                            ? "ring-2 ring-blue-500 ring-offset-1"
-                            : ""
-                        }`}
-                        onMouseEnter={(e) =>
-                          !isFuture && handleMouseEnter(day, e)
-                        }
-                        onMouseLeave={handleMouseLeave}
-                        title={
-                          day.date && !isFuture
-                            ? `${day.count} contributions on ${new Date(
-                                day.date + "T00:00:00"
-                              ).toLocaleDateString()}`
-                            : ""
-                        }
-                      />
-                    );
-                  })}
-                </div>
-              ))}
+              {/* Heatmap grid */}
+              <div className="flex gap-1">
+                {weeks.map((week, weekIndex) => (
+                  <div key={weekIndex} className="flex flex-col gap-1 shrink-0">
+                    {week.map((day, dayIndex) => {
+                      const level =
+                        day.date && !day.isFuture
+                          ? getContributionLevel(day.points)
+                          : 0;
+                      const isEmpty = !day.date;
+                      const isFuture = day.isFuture;
+
+                      return (
+                        <div
+                          key={`${weekIndex}-${dayIndex}`}
+                          className={`w-3 h-3 rounded-sm border border-border/30 transition-all duration-200 ${
+                            isEmpty
+                              ? "bg-transparent border-transparent"
+                              : isFuture
+                              ? "bg-muted/30 dark:bg-muted/20 cursor-default"
+                              : `${getContributionColor(
+                                  level
+                                )} hover:ring-2 hover:ring-primary hover:scale-110 cursor-pointer`
+                          } ${
+                            day.isToday
+                              ? "ring-2 ring-blue-500 ring-offset-1"
+                              : ""
+                          }`}
+                          onMouseEnter={(e) =>
+                            !isFuture && handleMouseEnter(day, e)
+                          }
+                          onMouseLeave={handleMouseLeave}
+                          title={
+                            day.date && !isFuture
+                              ? `${day.count} contributions on ${new Date(
+                                  day.date + "T00:00:00"
+                                ).toLocaleDateString()}`
+                              : ""
+                          }
+                        />
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Legend */}
+          {/* Legend - 3 fixed zones: Less (left), colors (center), More (right) */}
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span>Less</span>
             <div className="flex gap-1">
