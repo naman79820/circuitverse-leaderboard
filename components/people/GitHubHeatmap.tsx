@@ -176,33 +176,33 @@ export function GitHubHeatmap({ dailyActivity, className = "" }: HeatmapProps) {
   });
 
   const getMonthPositions = (): Array<{ month: string; position: number }> => {
-  const cellWidth = 16; // 12px (w-3) + 4px (gap-1)
-  const positions: Array<{ month: string; position: number }> = [];
+    const cellWidth = 16; // 12px (w-3) + 4px (gap-1)
+    const positions: Array<{ month: string; position: number }> = [];
 
-  let lastMonth = -1;
-  let lastPosition = -Infinity;
+    let lastMonth = -1;
+    let lastPosition = -Infinity;
 
-  weeks.forEach((week, weekIndex) => {
-    const firstDay = week.find((day) => day.date);
-    if (!firstDay) return;
+    weeks.forEach((week, weekIndex) => {
+      const firstDay = week.find((day) => day.date);
+      if (!firstDay) return;
 
-    const date = new Date(firstDay.date + "T00:00:00");
-    const month = date.getMonth();
-    const position = weekIndex * cellWidth;
+      const date = new Date(firstDay.date + "T00:00:00");
+      const month = date.getMonth();
+      const position = weekIndex * cellWidth;
 
-    // Only add when month changes and labels won't overlap
-    if (month !== lastMonth && position - lastPosition >= 32) {
-      positions.push({
-        month: monthLabels[month] ?? "",
-        position,
-      });
-      lastMonth = month;
-      lastPosition = position;
-    }
-  });
+      // Only add when month changes and labels won't overlap
+      if (month !== lastMonth && position - lastPosition >= 32) {
+        positions.push({
+          month: monthLabels[month] ?? "",
+          position,
+        });
+        lastMonth = month;
+        lastPosition = position;
+      }
+    });
 
-  return positions;
-};
+    return positions;
+  };
 
   const monthPositions = getMonthPositions();
 
