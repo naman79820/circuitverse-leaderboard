@@ -24,7 +24,7 @@ import {
   Eye
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { sortEntries, type SortBy } from "@/lib/leaderboard";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { Input } from "@/components/ui/input";
@@ -191,6 +191,24 @@ export default function LeaderboardView({
   const pathname = usePathname();
   
   const [viewMode, setViewMode] = useState<"grid" | "list">("list");
+  const topRef = useRef<HTMLDivElement | null>(null);
+  const scrollToLeaderboardTop = () => {
+    if(typeof window === "undefined") return;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    requestAnimationFrame(() => {
+      if(!topRef.current) return;
+
+      const rect = topRef.current.getBoundingClientRect();
+      const absoluteTop = rect.top + window.scrollY;
+      const offset = 80;
+      
+      window.scrollTo({
+        top: Math.max(absoluteTop - offset, 0),
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+    });
+  };
 
   const handleViewModeChange = (mode: "grid" | "list") => {
     setViewMode(mode);
@@ -393,6 +411,7 @@ export default function LeaderboardView({
       params.set("page", page.toString());
     }
     setCurrentPage(page);
+    scrollToLeaderboardTop();
     if (typeof window !== 'undefined') {
       window.history.replaceState(null, '', `${pathname}?${params.toString()}`);
     }
@@ -455,7 +474,7 @@ export default function LeaderboardView({
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div ref={topRef} className="container mx-auto px-4 py-8">
       <div className="flex gap-8">
         {/* Main Content */}
         <div className="flex-1 min-w-0">
