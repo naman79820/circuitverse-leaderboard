@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1767939744989,
+  "updatedAt": 1767961680591,
   "groups": [
     [
       "2026-01-06",
@@ -261,19 +261,19 @@
           "points": 2
         },
         {
-          "username": "akshitvigg",
-          "name": null,
-          "title": "feat - add skeleton loading cards for leaderboard page",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/139",
-          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
-          "points": 2
-        },
-        {
           "username": "Ayush1169",
           "name": null,
           "title": "implimented search function in people module",
           "link": "https://github.com/CircuitVerse/community-dashboard/pull/142",
           "avatar_url": "https://avatars.githubusercontent.com/u/188789872?v=4",
+          "points": 2
+        },
+        {
+          "username": "akshitvigg",
+          "name": null,
+          "title": "feat - add skeleton loading cards for leaderboard page",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/139",
+          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
           "points": 2
         },
         {
@@ -679,20 +679,20 @@
           "points": 1
         },
         {
-          "username": "akshitvigg",
-          "name": null,
-          "title": "feat(leaderboard) - persist layout across period changes",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/155",
-          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
-          "points": 2
-        },
-        {
           "username": "Ayush1169",
           "name": null,
           "title": "feat - add dynamic releases page with contributor recognition",
           "link": "https://github.com/CircuitVerse/community-dashboard/pull/120",
           "avatar_url": "https://avatars.githubusercontent.com/u/188789872?v=4",
           "points": 5
+        },
+        {
+          "username": "akshitvigg",
+          "name": null,
+          "title": "feat(leaderboard) - persist layout across period changes",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/155",
+          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
+          "points": 2
         },
         {
           "username": "Yana-do-code",
@@ -876,14 +876,6 @@
           "points": 1
         },
         {
-          "username": "akshitvigg",
-          "name": null,
-          "title": "feat - add skeleton loading cards for leaderboard page",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/139",
-          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
-          "points": 5
-        },
-        {
           "username": "Ayush1169",
           "name": null,
           "title": "implimented search function in people module",
@@ -898,6 +890,14 @@
           "link": "https://github.com/CircuitVerse/community-dashboard/issues/152",
           "avatar_url": "https://avatars.githubusercontent.com/u/188789872?v=4",
           "points": 1
+        },
+        {
+          "username": "akshitvigg",
+          "name": null,
+          "title": "feat - add skeleton loading cards for leaderboard page",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/139",
+          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
+          "points": 5
         },
         {
           "username": "Yana-do-code",
@@ -1824,14 +1824,6 @@
           "points": 1
         },
         {
-          "username": "akshitvigg",
-          "name": null,
-          "title": "docs - fix duplicated words in documentation",
-          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/481",
-          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
-          "points": 5
-        },
-        {
           "username": "Ayush1169",
           "name": null,
           "title": "Add debounced search to leaderboard for improved performance",
@@ -1854,6 +1846,14 @@
           "link": "https://github.com/CircuitVerse/community-dashboard/issues/100",
           "avatar_url": "https://avatars.githubusercontent.com/u/188789872?v=4",
           "points": 1
+        },
+        {
+          "username": "akshitvigg",
+          "name": null,
+          "title": "docs - fix duplicated words in documentation",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/481",
+          "avatar_url": "https://avatars.githubusercontent.com/u/156829501?v=4",
+          "points": 5
         },
         {
           "username": "manmeetsantre",
@@ -2849,6 +2849,86 @@
           "points": 4
         },
         {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "Docs/contributing md update",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/172",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 2
+        },
+        {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "Fix/issue bot final",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/171",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 2
+        },
+        {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "docs - add CONTRIBUTING.md with contribution guidelines",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/168",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 2
+        },
+        {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "feat - add issue assignment bot workflow",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/167",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 2
+        },
+        {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "fix(ux) - Select all text on project name input focus",
+          "link": "https://github.com/CircuitVerse/cv-frontend-vue/pull/748",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 2
+        },
+        {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "feat - add issue assignment bot workflow",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/167",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 5
+        },
+        {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "Feat - add bot to the repo .",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/166",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 1
+        },
+        {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "Review on PR #170",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/170",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 4
+        },
+        {
+          "username": "Git-HimanshuRathi",
+          "name": null,
+          "title": "Review on PR #161",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/161",
+          "avatar_url": "https://avatars.githubusercontent.com/u/194053810?v=4",
+          "points": 4
+        },
+        {
+          "username": "Atharva7126",
+          "name": null,
+          "title": "Fix - adjust YouTube video iframe On Chapter 3 for responsive width and correct title",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/467",
+          "avatar_url": "https://avatars.githubusercontent.com/u/177391853?v=4",
+          "points": 5
+        },
+        {
           "username": "Atharva7126",
           "name": null,
           "title": "Bug - Release page missing from footer “Pages” section",
@@ -2867,10 +2947,50 @@
         {
           "username": "Atharva7126",
           "name": null,
+          "title": "Review on PR #165",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/165",
+          "avatar_url": "https://avatars.githubusercontent.com/u/177391853?v=4",
+          "points": 4
+        },
+        {
+          "username": "Atharva7126",
+          "name": null,
+          "title": "Review on PR #164",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/164",
+          "avatar_url": "https://avatars.githubusercontent.com/u/177391853?v=4",
+          "points": 4
+        },
+        {
+          "username": "Atharva7126",
+          "name": null,
           "title": "Review on PR #155",
           "link": "https://github.com/CircuitVerse/community-dashboard/pull/155",
           "avatar_url": "https://avatars.githubusercontent.com/u/177391853?v=4",
           "points": 4
+        },
+        {
+          "username": "Me-Priyank",
+          "name": null,
+          "title": "Added footer navigation under the Pages section",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/165",
+          "avatar_url": "https://avatars.githubusercontent.com/u/143987856?v=4",
+          "points": 2
+        },
+        {
+          "username": "Ayush1169",
+          "name": null,
+          "title": "fix - improve mobile responsiveness of Releases page",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/170",
+          "avatar_url": "https://avatars.githubusercontent.com/u/188789872?v=4",
+          "points": 2
+        },
+        {
+          "username": "Ayush1169",
+          "name": null,
+          "title": "Releases page layout breaks on smaller screen sizes",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/169",
+          "avatar_url": "https://avatars.githubusercontent.com/u/188789872?v=4",
+          "points": 1
         },
         {
           "username": "sengmonkham",
@@ -2881,12 +3001,36 @@
           "points": 5
         },
         {
+          "username": "sahu-virendra-1908",
+          "name": null,
+          "title": "The theme toggle is currently implemented as a simple icon button (sun/moon). The button does not visually represent the current theme state clearly and lacks an intuitive toggle behavior, which leads to a poor user experience.",
+          "link": "https://github.com/CircuitVerse/mobile-app/issues/462",
+          "avatar_url": "https://avatars.githubusercontent.com/u/177405578?v=4",
+          "points": 1
+        },
+        {
+          "username": "manash213cyber",
+          "name": null,
+          "title": "Fix oversized SevenSegDisplay image in documentation",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/495",
+          "avatar_url": "https://avatars.githubusercontent.com/u/249688142?v=4",
+          "points": 2
+        },
+        {
           "username": "manash213cyber",
           "name": null,
           "title": "SevenSegDisplay image is too large and requires vertical scrolling",
           "link": "https://github.com/CircuitVerse/CircuitVerseDocs/issues/494",
           "avatar_url": "https://avatars.githubusercontent.com/u/249688142?v=4",
           "points": 1
+        },
+        {
+          "username": "Sarthakkeche",
+          "name": null,
+          "title": "fix - mobile layout overflow and nav overlap on small screens",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/164",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142013428?v=4",
+          "points": 2
         }
       ]
     ],
